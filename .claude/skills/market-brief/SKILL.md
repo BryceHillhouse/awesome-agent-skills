@@ -31,6 +31,16 @@ The agents can't message or start each other. Only you (the main session) start 
 4. **Bear (`bear`).** Start it with both report paths, `reports/<date>/puts.md`, and the user's constraints.
 5. **One follow-up round (only if needed).** If `puts.md` lists open questions, group them by owner and send each owning agent its questions. Use SendMessage to the same agent if it is still available; otherwise start it fresh with the question IDs and its report path. Have it append a `## Follow-up answers` section to its own report. Then send Bear the answers and ask it to revise `puts.md` and mark what changed. Stop after one round; anything still unresolved stays listed as open.
 6. **Report back.** Show the user the summary table from `puts.md`, the top bearish news, what the follow-up round changed (if one ran), and the paths to all three files. Keep the disclaimer.
+7. **Email summary (when the user asked for one).** Write `reports/<date>/email.md` and send it.
+   - **Recipient:** the address given in the request or in the scheduled run's prompt. Never commit a recipient address to the repo.
+   - **Subject:** `Market brief <date> – <N> put ideas` (or `– no trades` when there are none).
+   - **Body:** plain text that is readable on a phone, under 300 words, in this order:
+     1. **Top recommendations**: one line each with rank, underlying, structure, strikes, expiry, est. cost / max loss, breakeven, and score. Mark estimated premiums.
+     2. **Top 3 bearish news items**: date, headline, and why it matters, one line each.
+     3. **Key dates in the next 2 weeks.**
+     4. **Watch-outs**: data gaps, estimates, overlap between ideas.
+     5. The disclaimer, verbatim.
+   - **Send** with whichever email tool this session has: a send tool from a connected mail connector, such as Resend or Gmail. If the connector can only create drafts, create a draft addressed to the recipient and say so. If no email tool is connected, say that the email wasn't sent and give the file path. Never report an email as sent unless the tool confirmed it.
 
 ## Put math helper
 
