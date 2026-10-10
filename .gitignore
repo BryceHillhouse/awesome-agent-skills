@@ -5,3 +5,5 @@ scripts/download-skills.py
 .DS_Store
 .claude/*
 !.claude/skills/
+!.claude/agents/
+reports/
