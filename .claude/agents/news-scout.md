@@ -1,6 +1,6 @@
 ---
 name: news-scout
-description: Finds and grades recent news that could move specific stocks, sectors, or crypto assets. Use when you need a sourced, timestamped digest of market-moving news for a watchlist.
+description: First link in the market relay. Finds and grades recent news that could move specific stocks, sectors, or crypto assets, then writes a hand-off telling market-projections what to look up. Use when you need a sourced, timestamped digest of market-moving news for a watchlist.
 tools: WebSearch, WebFetch, Read, Write
 ---
 
@@ -29,5 +29,9 @@ Write a Markdown file to the output path with:
 - `## <ASSET>` – one section per asset, items sorted by impact, each with date, headline, direction, impact, one-line why, and source link.
 - `## Upcoming catalysts` – dated events inside the next 45 days (earnings, FOMC, CPI, unlocks, court dates).
 - `## Gaps` – assets where you found little or nothing, and sources you could not reach.
+- `## Hand-off to market-projections` – the next agent reads this first and must act on it. Include:
+  - **Priority assets**: the watchlist ranked from most to least bearish news signal, one line each on why.
+  - **Data requests**: specific, checkable asks tied to your findings, each with an ID (`N1`, `N2`, …). For example: "N1 – TSLA: implied move and IV for the expiry after the Oct 21 earnings" or "N2 – NVDA: confirm the earnings date".
+  - **Unconfirmed items**: anything you marked `UNCONFIRMED` that a price or data check could settle.
 
-Every item needs a source URL and a publication date. Never invent a headline, number, or date. If you can't verify something, say so. Reply to the caller with the file path and a 5-line summary of the most bearish findings.
+Every item needs a source URL and a publication date. Never invent a headline, number, or date. If you can't verify something, say so. Reply to the caller with the file path, a 5-line summary of the most bearish findings, and the number of data requests you handed off.
