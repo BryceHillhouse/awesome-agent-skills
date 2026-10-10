@@ -1,33 +1,33 @@
 ---
 name: market-brief
-description: Run the three-agent market relay — news-scout hands off to market-projections, which hands off to puts-strategist — for a watchlist of stocks and crypto, and produce a put-recommendations report. Use when asked for a market brief, news-driven put ideas, or to run the stock/crypto agents.
+description: Run the three-agent market relay — scout hands off to oracle, which hands off to bear — for a watchlist of stocks and crypto, and produce a put-recommendations report. Use when asked for a market brief, news-driven put ideas, or to run the stock/crypto agents.
 ---
 
 # Market brief
 
-Three subagents in `.claude/agents/` run as a relay. Each one reads the previous agent's report, starting with its hand-off section, and leaves a hand-off for the next. The dated files in `reports/<date>/` are the shared record of what each agent told the next.
+Three named subagents (Scout, Oracle, Bear) in `.claude/agents/` run as a relay. Each one reads the previous agent's report, starting with its hand-off section, and leaves a hand-off for the next. The dated files in `reports/<date>/` are the shared record of what each agent told the next.
 
 ```
-news-scout ──"Hand-off to market-projections"──▶ market-projections ──"Hand-off to puts-strategist"──▶ puts-strategist
-     ▲                                                  ▲                                                     │
-     └──────────────────── "Open questions" (one follow-up round, routed by you) ─────────────────────────────┘
+Scout ──"Hand-off to Oracle"──▶ Oracle ──"Hand-off to Bear"──▶ Bear
+  ▲                               ▲                             │
+  └──────── "Open questions" (one follow-up round) ─────────────┘
 ```
 
 | Agent | Reads | Writes | Hands off |
 |---|---|---|---|
-| `news-scout` | the watchlist | `news.md` | priority assets, data requests `N1…`, unconfirmed items |
-| `market-projections` | `news.md` | `projections.md` | answers to `N1…`, bearish candidates table, conflicts, unknowns |
-| `puts-strategist` | both reports | `puts.md` | ranked put ideas, open questions `Q1…` |
+| `scout` | the watchlist | `news.md` | priority assets, data requests `N1…`, unconfirmed items |
+| `oracle` | `news.md` | `projections.md` | answers to `N1…`, bearish candidates table, conflicts, unknowns |
+| `bear` | both reports | `puts.md` | ranked put ideas, open questions `Q1…` |
 
 The agents can't message or start each other. Only you (the main session) start them, so you carry each hand-off forward by passing file paths.
 
 ## Steps
 
 1. **Get the inputs.** You need a watchlist. If the user gave none, ask for one. Otherwise use what they gave. Also note any constraints they mention: account size, max risk per idea, holdings to hedge, horizon, lookback window (default 72h). Use today's date as `<date>` (YYYY-MM-DD) and create `reports/<date>/`.
-2. **news-scout.** Start it with the watchlist, today's date, the lookback, and `reports/<date>/news.md`. When it returns, check that `news.md` ends with `## Hand-off to market-projections`. If the section is missing, send the agent back to add it.
-3. **market-projections.** Start it with the watchlist, today's date, `reports/<date>/projections.md`, and the path to `news.md`. Check that the file has `## Answers to news-scout` and `## Hand-off to puts-strategist`.
-4. **puts-strategist.** Start it with both report paths, `reports/<date>/puts.md`, and the user's constraints.
-5. **One follow-up round (only if needed).** If `puts.md` lists open questions, group them by owner and send each owning agent its questions. Use SendMessage to the same agent if it is still available; otherwise start it fresh with the question IDs and its report path. Have it append a `## Follow-up answers` section to its own report. Then send the strategist the answers and ask it to revise `puts.md` and mark what changed. Stop after one round; anything still unresolved stays listed as open.
+2. **Scout (`scout`).** Start it with the watchlist, today's date, the lookback, and `reports/<date>/news.md`. When it returns, check that `news.md` ends with `## Hand-off to Oracle`. If the section is missing, send the agent back to add it.
+3. **Oracle (`oracle`).** Start it with the watchlist, today's date, `reports/<date>/projections.md`, and the path to `news.md`. Check that the file has `## Answers to Scout` and `## Hand-off to Bear`.
+4. **Bear (`bear`).** Start it with both report paths, `reports/<date>/puts.md`, and the user's constraints.
+5. **One follow-up round (only if needed).** If `puts.md` lists open questions, group them by owner and send each owning agent its questions. Use SendMessage to the same agent if it is still available; otherwise start it fresh with the question IDs and its report path. Have it append a `## Follow-up answers` section to its own report. Then send Bear the answers and ask it to revise `puts.md` and mark what changed. Stop after one round; anything still unresolved stays listed as open.
 6. **Report back.** Show the user the summary table from `puts.md`, the top bearish news, what the follow-up round changed (if one ran), and the paths to all three files. Keep the disclaimer.
 
 ## Put math helper
