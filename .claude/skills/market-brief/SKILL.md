@@ -41,10 +41,30 @@ The agents can't message or start each other. Only you (the main session) start 
 5. **Bear (`bear`).** Start it with both report paths, `reports/<date>/puts.md`, and the user's constraints.
 6. **One follow-up round (only if needed).** If `puts.md` lists open questions, group them by owner and send each owning agent its questions. Use SendMessage to the same agent if it is still available; otherwise start it fresh with the question IDs and its report path. Have it append a `## Follow-up answers` section to its own report. Then send Bear the answers and ask it to revise `puts.md` and mark what changed. Stop after one round; anything still unresolved stays listed as open.
 7. **Report back.** Show the user the summary table from `puts.md`, the top bearish news, what the follow-up round changed (if one ran), and the paths to all three files. Keep the disclaimer.
-8. **Email summary (when the user asked for one).** Write `reports/<date>/email.md` and send it.
+8. **Update the live dashboard.** This is the Agent Factory page at https://claude.ai/artifact/7KVv6sSvCmmZZtrEePmWP7, and the step uses the `ArtifactData` tool with that `url`. Its database is the durable record: the `reports/` folder disappears with the container, so the scorecard lives here.
+   - **At the start of the shift** (before step 3), `set` `runs/<date>-r<n>` with `{date, label: "Run <n>", status: "running", nextShift}`. Use `n` = 1 plus the number of runs already listed for that date.
+   - **After Bear**, `update` that run document with the full shift:
+     - `status: "complete"` (or `"failed"` with a `summary` saying what broke);
+     - `riskUsed`, `riskCap`, `emailSent`;
+     - `summary`: one sentence;
+     - `supply`: `[{source, detail, state: "verified"|"rejected"}]` from `verified.md`;
+     - `scout {searches, budget, requests, items:[{id, text, severity}], line}`;
+     - `oracle {answered, total, items:[{text, state}], line}`;
+     - `bear {ideas, line, candidates:[{asset, score, breakdown:{catalyst,timing,projections,positioning,data}, decision, reason}]}`.
+
+     Each `line` is a two-sentence, in-character report from that agent. Every `text` stays under 45 characters.
+   - **Scorecard: new rows.** For every candidate Bear scored, `set` `scorecard/<date>-<ASSET>` with `{date, asset, score, decision, entry, checkDate: date + 14 days, exit: null, source}`. `entry` is the verified price from `verified.md`.
+   - **Scorecard: paper trades.** When Bear opens an idea, add `paper: {structure, strikes, expiry, cost, maxLoss, value, pnl}`. Price `value` with `put_math.py`: the `bs` estimate while open, intrinsic value at expiry. `pnl` = value − cost.
+   - **Scorecard: grading.** `list` the scorecard and handle every row whose `exit` is null:
+     - set `latest` from today's `verified.md` price for that asset;
+     - when `checkDate` ≤ today, also set `exit` and `exitDate`.
+
+     Pin every update with `if_version`, and batch the writes (up to 50 per call). Never change an `entry` once it's written.
+9. **Email summary (when the user asked for one).** Write `reports/<date>/email.md` and send it.
    - **Recipient:** the address given in the request or in the scheduled run's prompt. Never commit a recipient address to the repo.
    - **Subject:** `Market brief <date> – <N> put ideas` (or `– no trades` when there are none).
    - **Body:** plain text that is readable on a phone, under 300 words, in this order:
+     0. A link to the live dashboard: https://claude.ai/artifact/7KVv6sSvCmmZZtrEePmWP7
      1. **Top recommendations**: one line each with rank, underlying, structure, strikes, expiry, est. cost / max loss, breakeven, and score. Mark estimated premiums.
      2. **Top 3 bearish news items**: date, headline, and why it matters, one line each.
      3. **Key dates in the next 2 weeks.**
