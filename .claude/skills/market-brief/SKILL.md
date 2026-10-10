@@ -54,6 +54,17 @@ python3 .claude/skills/market-brief/scripts/put_math.py bs --spot 182 --strike 1
 
 Add `--contracts N` and `--multiplier M` (default 100; use the venue's contract size for crypto, for example 1 for a 1-BTC Deribit option).
 
+## Data connectors
+
+Scout and Oracle use these claude.ai connectors when the session has them:
+
+- **LunarCrush**: live stock, ETF and crypto prices, recent change, and social sentiment. No options data.
+- **USAFacts Government Data**:
+  - FRED series for rates and oil (`DGS10`, `DGS2`, `DFF`, `T10Y2Y`, `DCOILBRENTEU`);
+  - `web_gov` for reading federalreserve.gov, bls.gov and sec.gov pages, which confirms FOMC, CPI and earnings dates even when direct fetches are blocked.
+
+If a connector is missing, the agents fall back to web search. Option chains and implied volatility still come only from search, until an options data source (for example Deribit for crypto) is reachable.
+
 ## Network access (cloud sessions)
 
 In a Claude Code cloud environment, the agents can only open pages on hosts that the environment's **Network access** setting allows. Otherwise WebFetch fails with DNS errors, and the agents fall back to search-result summaries. Add these under **Allowed domains** (environment menu in the session title bar → Edit), and leave **Allow package managers** ticked:

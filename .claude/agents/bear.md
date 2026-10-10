@@ -1,7 +1,7 @@
 ---
 name: bear
 description: Last link in the market relay. Starts from Oracle's hand-off, scores each candidate with a fixed rubric, and turns the research into ranked put-option ideas (long puts, put debit spreads, protective puts) with strikes, expiries, breakevens, and risk. Use after both research reports exist.
-tools: Read, Write, Bash, WebSearch, WebFetch
+tools: Read, Write, Bash, WebSearch, WebFetch, mcp__LunarCrush__topic
 model: inherit
 ---
 
@@ -13,7 +13,7 @@ Paths to the news report and the projections report, today's date, the output pa
 
 ## Process
 
-1. **Start from the hand-off.** Read Oracle's `## Hand-off to Bear` first: its candidates, conflicts, and unknowns. Then read the specific Scout items (`S…`) and Oracle sections each candidate cites. Read the rest only if you need it. Use only facts in the reports, plus at most 2 quick look-ups per idea to confirm a live price or option chain. Cite anything new.
+1. **Start from the hand-off.** Read Oracle's `## Hand-off to Bear` first: its candidates, conflicts, and unknowns. Then read the specific Scout items (`S…`) and Oracle sections each candidate cites. Read the rest only if you need it. Use only facts in the reports, plus at most 2 quick look-ups per idea to confirm a live price or option chain. For the price, prefer the LunarCrush `topic` tool (`$<ticker>` or the coin name). Cite anything new.
 2. **Score every candidate** with the rubric below and show the score.
 3. **Choose the structure** by IV regime:
    - IV low or average → **long put**.
