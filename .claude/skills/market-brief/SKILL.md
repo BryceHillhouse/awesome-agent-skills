@@ -26,12 +26,22 @@ The agents can't message or start each other. Only you (the main session) start 
 ## Steps
 
 1. **Get the inputs.** You need a watchlist. If the user gave none, ask for one. Otherwise use what they gave. Also note any constraints they mention: account size, max risk per idea, holdings to hedge, horizon, lookback window (default 72h). Use today's date as `<date>` (YYYY-MM-DD) and create `reports/<date>/`.
-2. **Scout (`scout`).** Start it with the watchlist, today's date, the lookback, and `reports/<date>/news.md`. When it returns, check that `news.md` ends with `## Hand-off to Oracle`. If the section is missing, send the agent back to add it.
-3. **Oracle (`oracle`).** Start it with the watchlist, today's date, `reports/<date>/projections.md`, and the path to `news.md`. Check that the file has `## Answers to Scout` and `## Hand-off to Bear`.
-4. **Bear (`bear`).** Start it with both report paths, `reports/<date>/puts.md`, and the user's constraints.
-5. **One follow-up round (only if needed).** If `puts.md` lists open questions, group them by owner and send each owning agent its questions. Use SendMessage to the same agent if it is still available; otherwise start it fresh with the question IDs and its report path. Have it append a `## Follow-up answers` section to its own report. Then send Bear the answers and ask it to revise `puts.md` and mark what changed. Stop after one round; anything still unresolved stays listed as open.
-6. **Report back.** Show the user the summary table from `puts.md`, the top bearish news, what the follow-up round changed (if one ran), and the paths to all three files. Keep the disclaimer.
-7. **Email summary (when the user asked for one).** Write `reports/<date>/email.md` and send it.
+2. **Verified data (you, before any agent).** Subagents may not get the session's connectors: the scout agent reported no connector tools on its first run with them. So you fetch the hard facts yourself and write `reports/<date>/verified.md` for every agent to read. Use these tools:
+   - **LunarCrush `topic`** for each asset: `$spy`, `$qqq`, `$nvda`, `$tsla`, `$aapl`, `$amzn`, `$ibit`, `$etha`, plus `cryptocurrencies` sorted by `market_cap` (limit 3) for BTC and ETH. Record price, 24h/7d/30d change, 1-year high and low, sentiment, and the critical theme. **Rate limit: 4 calls per minute, 100 per day.** Send at most 4 per batch and wait for the minute to reset if you hit the limit. Sanity-check each row: if a price move contradicts its underlying (for example ETHA vs. ETH) or its own market-cap change, mark it UNRELIABLE.
+   - **USAFacts → FRED `getSeriesObservations`** (`sort_order: desc`, `limit: 3–5`) for `DGS10`, `DGS2`, `DFF` and `DCOILBRENTEU`. The VIX (`VIXCLS`) is license-restricted, so don't request it.
+   - **USAFacts → web_gov `fetch`**:
+     - `https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm` for FOMC dates.
+     - `https://www.bls.gov/schedule/news_release/cpi.htm` and `https://www.bls.gov/schedule/news_release/empsit.htm` for CPI and jobs dates.
+
+     Mark each date CONFIRMED, NOT LISTED, or CONTRADICTED.
+
+   Tell Scout, Oracle and Bear to read `verified.md` first, treat it as verified, and not spend searches re-finding it.
+3. **Scout (`scout`).** Start it with the watchlist, today's date, the lookback, and `reports/<date>/news.md`. When it returns, check that `news.md` ends with `## Hand-off to Oracle`. If the section is missing, send the agent back to add it.
+4. **Oracle (`oracle`).** Start it with the watchlist, today's date, `reports/<date>/projections.md`, and the path to `news.md`. Check that the file has `## Answers to Scout` and `## Hand-off to Bear`.
+5. **Bear (`bear`).** Start it with both report paths, `reports/<date>/puts.md`, and the user's constraints.
+6. **One follow-up round (only if needed).** If `puts.md` lists open questions, group them by owner and send each owning agent its questions. Use SendMessage to the same agent if it is still available; otherwise start it fresh with the question IDs and its report path. Have it append a `## Follow-up answers` section to its own report. Then send Bear the answers and ask it to revise `puts.md` and mark what changed. Stop after one round; anything still unresolved stays listed as open.
+7. **Report back.** Show the user the summary table from `puts.md`, the top bearish news, what the follow-up round changed (if one ran), and the paths to all three files. Keep the disclaimer.
+8. **Email summary (when the user asked for one).** Write `reports/<date>/email.md` and send it.
    - **Recipient:** the address given in the request or in the scheduled run's prompt. Never commit a recipient address to the repo.
    - **Subject:** `Market brief <date> – <N> put ideas` (or `– no trades` when there are none).
    - **Body:** plain text that is readable on a phone, under 300 words, in this order:
