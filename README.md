@@ -1414,6 +1414,7 @@ Lighthouse-style web quality skills from Addy Osmani(Google Chrome team) coverin
 - **[addyosmani/accessibility](https://officialskills.sh/addyosmani/skills/accessibility)** - WCAG compliance, screen reader support, and keyboard navigation
 - **[addyosmani/seo](https://officialskills.sh/addyosmani/skills/seo)** - Search engine optimization, crawlability, and structured data
 - **[addyosmani/best-practices](https://officialskills.sh/addyosmani/skills/best-practices)** - Security, modern web APIs, and code quality patterns
+- **[addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)** - Production engineering workflow skills from spec to review
 
 </details>
 
@@ -1714,6 +1715,7 @@ Official skills published by Cypress to help create, maintain, understand, and f
 - **[half144/cutaway](https://github.com/half144/cutaway)** - Record polished demo videos of web flows with Playwright
 - **[kulchankas/paranoid](https://github.com/kulchankas/paranoid)** - Pentests your running app: find, prove, patch, re-verify
 - **[gal-a/qikly](https://github.com/gal-a/qikly/tree/main/.claude/skills/qikly)** - Writes pytest suites from criteria the coding agent never sees
+- **[TheQtCompanyRnD/agent-skills](https://github.com/TheQtCompanyRnD/agent-skills)** - Official Qt development and QML review skills
 
 </details>
 
@@ -1749,6 +1751,7 @@ Official skills published by Cypress to help create, maintain, understand, and f
 - **[rebelytics/task-observer](https://github.com/rebelytics/one-skill-to-rule-them-all)** - Meta-skill for continuous skill improvement & automatic skill creation.
 - **[archcore-ai/archcore](https://github.com/archcore-ai/archcore)** - Spec-driven development and context engineering for AI coding agents
 - **[Qiuner/birdview](https://github.com/Qiuner/birdview)** - Put architecture and constraints at the center of AI coding
+- **[forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)** - Karpathy-inspired guidelines that curb common LLM coding mistakes
 
 </details>
 
