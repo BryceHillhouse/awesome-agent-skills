@@ -32,3 +32,17 @@ python3 .claude/skills/market-brief/scripts/put_math.py bs --spot 182 --strike 1
 ```
 
 Add `--contracts N` and `--multiplier M` (default 100; use the venue's contract size for crypto, for example 1 for a 1-BTC Deribit option).
+
+## Network access (cloud sessions)
+
+In a Claude Code cloud environment, the agents can only open pages on hosts that the environment's **Network access** setting allows. Otherwise WebFetch fails with DNS errors, and the agents fall back to search-result summaries. Add these under **Allowed domains** (environment menu in the session title bar → Edit), and leave **Allow package managers** ticked:
+
+```
+finance.yahoo.com
+cnbc.com
+sec.gov
+federalreserve.gov
+deribit.com
+```
+
+Some sites serve from `www.` or other subdomains (`www.cnbc.com`, `www.sec.gov`, `www.federalreserve.gov`, `www.deribit.com`). If those still fail after the change, add the `www.` form too.
