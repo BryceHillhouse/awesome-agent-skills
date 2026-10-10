@@ -15,9 +15,11 @@ Scout ──"Hand-off to Oracle"──▶ Oracle ──"Hand-off to Bear"──�
 
 | Agent | Reads | Writes | Hands off |
 |---|---|---|---|
-| `scout` | the watchlist | `news.md` | priority assets, data requests `N1…`, unconfirmed items |
+| `scout` | the watchlist | `news.md` (news items `S1…`, catalyst calendar) | priority assets, data requests `N1…`, unconfirmed items |
 | `oracle` | `news.md` | `projections.md` | answers to `N1…`, bearish candidates table, conflicts, unknowns |
 | `bear` | both reports | `puts.md` | ranked put ideas, open questions `Q1…` |
+
+**Who owns what:** Scout owns news and every date. Oracle owns the numbers. Bear owns scoring (a fixed 0–10 rubric; only scores of 6 or more become ideas) and the trades. Scout and Oracle run on a faster model with per-asset search budgets, and skip any host that fails once. Bear runs on the session's model.
 
 The agents can't message or start each other. Only you (the main session) start them, so you carry each hand-off forward by passing file paths.
 
