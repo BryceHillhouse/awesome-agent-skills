@@ -1,0 +1,269 @@
+<title>Jenkinss HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a top-down studio floor plan — tiled floor, six desks (one per agent), a whiteboard for the calendar and an inbox for the creator. */
+:root {
+  --floor: #e9efee;
+  --tile: #dde6e4;
+  --desk: #ffffff;
+  --desk-edge: #c9d6d3;
+  --ink: #15302b;
+  --muted: #5b716c;
+  --accent: #d8336f;
+  --accent-soft: #fbe3ec;
+  --ok: #1f8a5b; --ok-soft: #dcf2e7;
+  --work: #b26a00; --work-soft: #fdf0d9;
+  --wait: #5b716c; --wait-soft: #e6ecea;
+  --board: #f7faf9;
+  --skin1: #f1c7a3; --skin2: #c98e63; --skin3: #8d5a3b; --skin4: #e8b48c;
+  --display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --floor: #0e1817; --tile: #13201e; --desk: #172624; --desk-edge: #27403c;
+  --ink: #e2eeeb; --muted: #93aaa4; --accent: #f2709d; --accent-soft: #3a1d29;
+  --ok: #5fd39b; --ok-soft: #173327; --work: #f2b553; --work-soft: #3a2c12;
+  --wait: #93aaa4; --wait-soft: #1f2e2c; --board: #13201e; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --floor: #0e1817; --tile: #13201e; --desk: #172624; --desk-edge: #27403c;
+  --ink: #e2eeeb; --muted: #93aaa4; --accent: #f2709d; --accent-soft: #3a1d29;
+  --ok: #5fd39b; --ok-soft: #173327; --work: #f2b553; --work-soft: #3a2c12;
+  --wait: #93aaa4; --wait-soft: #1f2e2c; --board: #13201e; color-scheme: dark }
+
+* { box-sizing: border-box }
+body {
+  background: var(--floor); color: var(--ink); font: 15px/1.5 var(--body);
+  background-image:
+    repeating-linear-gradient(0deg, var(--tile) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, var(--tile) 0 1px, transparent 1px 48px);
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 56px; display: grid; gap: 28px }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+h1 { font: 800 clamp(30px, 5vw, 48px)/1 var(--display); margin: 6px 0 0; letter-spacing: -.02em; text-wrap: balance }
+h1 span { color: var(--accent) }
+h2 { font: 700 20px/1.2 var(--display); margin: 0 }
+.campaign { background: var(--desk); border: 1px solid var(--desk-edge); border-radius: 14px; padding: 12px 16px; display: grid; gap: 4px; min-width: 0 }
+.campaign b { font: 700 17px/1.2 var(--display) }
+
+/* Pipeline */
+.pipeline { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0 }
+.pipeline li { flex: 1 1 140px; display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 10px; background: var(--desk); border: 1px solid var(--desk-edge); font-weight: 600; font-size: 14px }
+.pipeline li .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--wait); flex: none }
+.pipeline li[data-s="done"] .dot { background: var(--ok) }
+.pipeline li[data-s="working"] .dot { background: var(--work); box-shadow: 0 0 0 4px var(--work-soft) }
+.pipeline li small { margin-left: auto; font: 400 11px var(--mono); color: var(--muted) }
+
+/* Floor */
+.floor { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px }
+@media (max-width: 900px) { .floor { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+@media (max-width: 600px) { .floor { grid-template-columns: minmax(0, 1fr) } }
+
+.desk { position: relative; background: var(--desk); border: 1px solid var(--desk-edge); border-radius: 18px; padding: 18px; display: grid; gap: 12px; align-content: start; min-width: 0;
+  box-shadow: 0 10px 0 -4px var(--desk-edge) }
+.desk-top { display: flex; gap: 14px; align-items: center }
+.avatar { width: 78px; height: 78px; flex: none; border-radius: 50%; background: var(--c); display: grid; place-items: center; overflow: hidden }
+.avatar svg { width: 100%; height: 100% }
+.desk[data-s="working"] .avatar svg { animation: bob 1.6s ease-in-out infinite }
+@keyframes bob { 50% { transform: translateY(-3px) } }
+.who { min-width: 0 }
+.who h3 { font: 800 22px/1 var(--display); margin: 0 }
+.who p { margin: 2px 0 0; color: var(--muted); font-size: 13px }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 500 11px/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 6px 9px; border-radius: 99px; margin-top: 8px; background: var(--wait-soft); color: var(--wait) }
+.pill[data-s="working"] { background: var(--work-soft); color: var(--work) }
+.pill[data-s="done"] { background: var(--ok-soft); color: var(--ok) }
+.pill .typing { display: inline-flex; gap: 2px }
+.pill .typing i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; animation: blink 1.2s infinite }
+.pill .typing i:nth-child(2) { animation-delay: .2s } .pill .typing i:nth-child(3) { animation-delay: .4s }
+@keyframes blink { 50% { opacity: .2 } }
+.task { font-size: 14px; margin: 0 }
+.task strong { display: block; font: 500 11px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted) }
+.output { margin: 0; padding: 12px; border-radius: 10px; background: var(--board); border: 1px dashed var(--desk-edge); font-size: 13.5px; overflow-wrap: anywhere }
+.output ul { margin: 6px 0 0; padding-left: 18px } .output li { margin: 2px 0 }
+.file { font: 400 11.5px var(--mono); color: var(--muted); overflow-wrap: anywhere }
+.mug { position: absolute; top: 14px; right: 14px; font: 500 10px var(--mono); color: var(--muted) }
+
+/* Back wall */
+.backwall { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 22px }
+@media (max-width: 900px) { .backwall { grid-template-columns: minmax(0, 1fr) } }
+.board, .inbox, .log { background: var(--desk); border: 1px solid var(--desk-edge); border-radius: 18px; padding: 18px; display: grid; gap: 12px; align-content: start; min-width: 0 }
+.board { background: var(--board); border-width: 6px; border-color: var(--desk-edge) }
+.table-scroll { overflow-x: auto }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px }
+th { text-align: left; font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--desk-edge) }
+td { padding: 8px; border-bottom: 1px solid var(--desk-edge); vertical-align: top }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; font-family: var(--mono); font-size: 12px }
+.empty { color: var(--muted); font-style: italic; margin: 0 }
+.inbox ol { margin: 0; padding-left: 20px; display: grid; gap: 8px }
+.inbox { border-color: var(--accent); background: var(--accent-soft) }
+.log ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px }
+.log li { display: grid; grid-template-columns: 54px 22px minmax(0, 1fr); gap: 8px; align-items: center; font-size: 13.5px }
+.log time { font: 400 12px var(--mono); color: var(--muted) }
+.mini { width: 22px; height: 22px; border-radius: 50%; background: var(--c); overflow: hidden }
+footer { color: var(--muted); font-size: 12.5px }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Instagram growth studio · @theleeroyjenkinss</div>
+      <h1>Jenkinss <span>HQ</span></h1>
+    </div>
+    <div class="campaign">
+      <span class="eyebrow">Current campaign</span>
+      <b id="campaign"></b>
+      <span class="file" id="updated"></span>
+    </div>
+  </header>
+
+  <ol class="pipeline" id="pipeline" aria-label="Weekly pipeline"></ol>
+
+  <section class="floor" id="floor" aria-label="Team desks"></section>
+
+  <section class="backwall">
+    <div class="board">
+      <h2>Whiteboard · content calendar</h2>
+      <div id="calendar"></div>
+    </div>
+    <div class="inbox">
+      <h2>Needs you</h2>
+      <ol id="inbox"></ol>
+    </div>
+  </section>
+
+  <section class="log">
+    <h2>Office log</h2>
+    <ul id="log"></ul>
+  </section>
+
+  <footer>The team writes drafts. You post, reply and send everything yourself. Files live in <span class="file">instagram/</span> on the <span class="file">claude/instagram-growth-team</span> branch.</footer>
+</div>
+
+<script>
+// ---- Office state (Claude updates this block and republishes) ----
+const STATE = {
+  campaign: "Puerto Rico · Oct 2026",
+  updated: "2026-10-11",
+  pipeline: [
+    { name: "Research", s: "working", by: "Radar" },
+    { name: "Plan", s: "waiting", by: "Atlas" },
+    { name: "Draft", s: "waiting", by: "Quill" },
+    { name: "Edit", s: "waiting", by: "Margin" },
+    { name: "Engage", s: "waiting", by: "Echo" },
+    { name: "Analyze", s: "waiting", by: "Ledger" }
+  ],
+  agents: [
+    { id: "radar", name: "Radar", role: "Trend scout", c: "#7cc6c0", look: "radar", s: "working",
+      task: "Researching Puerto Rico Reel formats, seasonal hooks, similar creators and hashtags.",
+      out: null, file: "instagram/research/2026-10-11-puerto-rico.md" },
+    { id: "atlas", name: "Atlas", role: "Strategist", c: "#f2b880", look: "atlas", s: "waiting",
+      task: "Will turn Radar's research into a Puerto Rico posting plan.",
+      out: null, file: "instagram/content-calendar.md" },
+    { id: "quill", name: "Quill", role: "Content creator", c: "#c9a7eb", look: "quill", s: "waiting",
+      task: "Will draft Reel scripts, carousels and captions for the plan.",
+      out: null, file: "instagram/drafts/" },
+    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "waiting",
+      task: "Will tighten hooks, cut clichés and fact-check the drafts.",
+      out: null, file: "instagram/drafts/" },
+    { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "waiting",
+      task: "Will build a daily engagement list and collab pitch drafts.",
+      out: null, file: "instagram/drafts/outreach-*.md" },
+    { id: "ledger", name: "Ledger", role: "Growth analyst", c: "#a9c4f2", look: "ledger", s: "waiting",
+      task: "Waiting for your first Insights export to set a baseline.",
+      out: null, file: "instagram/insights/" }
+  ],
+  calendar: [],
+  inbox: [
+    "Tell the team where you've been in Puerto Rico so far and where you're heading next.",
+    "Keep shooting short vertical clips, food, prices and a few shots with you in them.",
+    "Switch to a Professional (Creator) account if you haven't, so Ledger can read Insights."
+  ],
+  log: [
+    { t: "today", who: "radar", msg: "Started Puerto Rico trend research." },
+    { t: "today", who: "atlas", msg: "Recorded @theleeroyjenkinss and the Puerto Rico trip in the profile." }
+  ]
+};
+
+// ---- Avatars: one SVG character per agent ----
+const SKIN = { radar: "--skin2", atlas: "--skin1", quill: "--skin3", margin: "--skin4", echo: "--skin2", ledger: "--skin1" };
+function avatar(look) {
+  const skin = `var(${SKIN[look]})`, ink = "var(--ink)";
+  const face = `
+    <rect x="22" y="70" width="56" height="40" rx="20" fill="var(--desk)"/>
+    <rect x="44" y="58" width="12" height="14" fill="${skin}"/>
+    <circle cx="50" cy="44" r="21" fill="${skin}"/>
+    <circle cx="42.5" cy="45" r="2.4" fill="${ink}"/><circle cx="57.5" cy="45" r="2.4" fill="${ink}"/>
+    <path d="M44 53 q6 5 12 0" stroke="${ink}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`;
+  const extra = {
+    // binoculars on a strap + spiky hair
+    radar: `<path d="M30 36 l6-14 6 9 6-12 6 12 6-9 6 14 z" fill="${ink}"/>
+            <rect x="34" y="80" width="13" height="11" rx="3" fill="${ink}"/><rect x="53" y="80" width="13" height="11" rx="3" fill="${ink}"/>
+            <rect x="45" y="83" width="10" height="4" fill="${ink}"/>`,
+    // round glasses + side part + compass pin
+    atlas: `<path d="M29 40 q4-22 24-20 q16 2 18 18 q-14-10-42 2z" fill="${ink}"/>
+            <circle cx="42.5" cy="45" r="6" fill="none" stroke="${ink}" stroke-width="2"/><circle cx="57.5" cy="45" r="6" fill="none" stroke="${ink}" stroke-width="2"/>
+            <path d="M48.5 45 h3" stroke="${ink}" stroke-width="2"/>
+            <circle cx="62" cy="86" r="6" fill="var(--accent)"/><path d="M62 81 l2 5 -2 5 -2-5z" fill="var(--desk)"/>`,
+    // beret + feather quill
+    quill: `<ellipse cx="50" cy="27" rx="22" ry="8" fill="var(--accent)"/><circle cx="50" cy="19" r="3" fill="var(--accent)"/>
+            <path d="M74 20 q-10 14 -6 30" stroke="${ink}" stroke-width="2" fill="none"/>
+            <path d="M74 20 q4 12 -4 22 q-4-12 4-22z" fill="var(--desk)" stroke="${ink}" stroke-width="1.5"/>`,
+    // top bun + red pen behind ear
+    margin: `<circle cx="50" cy="18" r="9" fill="${ink}"/><path d="M29 42 q2-20 21-20 q19 0 21 20 q-10-12-42 0z" fill="${ink}"/>
+             <rect x="66" y="30" width="5" height="22" rx="2" transform="rotate(20 68 41)" fill="var(--accent)"/>`,
+    // headset
+    echo: `<path d="M30 40 q2-20 20-20 q18 0 20 20 q-8-10-40 0z" fill="${ink}"/>
+           <path d="M28 46 q0-26 22-26 q22 0 22 26" stroke="${ink}" stroke-width="3" fill="none"/>
+           <rect x="24" y="42" width="8" height="12" rx="3" fill="var(--accent)"/><rect x="68" y="42" width="8" height="12" rx="3" fill="var(--accent)"/>
+           <path d="M28 54 q2 8 12 8" stroke="${ink}" stroke-width="2" fill="none"/><circle cx="41" cy="62" r="2.5" fill="${ink}"/>`,
+    // green visor + chart pin
+    ledger: `<path d="M30 38 q2-18 20-18 q18 0 20 18z" fill="${ink}"/>
+             <path d="M27 36 h46 l-6 7 h-34z" fill="var(--ok)"/>
+             <rect x="56" y="80" width="14" height="12" rx="2" fill="var(--desk)" stroke="${ink}" stroke-width="1.5"/>
+             <path d="M58 89 l3-3 3 2 4-5" stroke="var(--accent)" stroke-width="1.6" fill="none"/>`
+  }[look] || "";
+  return `<svg viewBox="0 0 100 100" aria-hidden="true">${face}${extra}</svg>`;
+}
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const LABEL = { working: "Working", waiting: "Waiting", done: "Done" };
+const byId = Object.fromEntries(STATE.agents.map(a => [a.id, a]));
+
+document.getElementById("campaign").textContent = STATE.campaign;
+document.getElementById("updated").textContent = "Updated " + STATE.updated;
+
+document.getElementById("pipeline").innerHTML = STATE.pipeline.map(p =>
+  `<li data-s="${p.s}"><span class="dot"></span>${esc(p.name)}<small>${esc(p.by)}</small></li>`).join("");
+
+document.getElementById("floor").innerHTML = STATE.agents.map(a => `
+  <article class="desk" data-s="${a.s}" style="--c:${a.c}">
+    <div class="desk-top">
+      <div class="avatar">${avatar(a.look)}</div>
+      <div class="who">
+        <h3>${esc(a.name)}</h3>
+        <p>${esc(a.role)}</p>
+        <span class="pill" data-s="${a.s}">${a.s === "working" ? '<span class="typing"><i></i><i></i><i></i></span>' : ""}${LABEL[a.s]}</span>
+      </div>
+    </div>
+    <p class="task"><strong>On the desk</strong>${esc(a.task)}</p>
+    ${a.out ? `<div class="output">${a.out}</div>` : ""}
+    <div class="file">${esc(a.file)}</div>
+  </article>`).join("");
+
+document.getElementById("calendar").innerHTML = STATE.calendar.length
+  ? `<div class="table-scroll"><table><thead><tr><th>Date</th><th>Format</th><th>Hook</th><th>Goal</th><th>Status</th></tr></thead><tbody>${
+      STATE.calendar.map(r => `<tr><td class="n">${esc(r.date)}</td><td>${esc(r.format)}</td><td>${esc(r.hook)}</td><td>${esc(r.goal)}</td><td>${esc(r.status)}</td></tr>`).join("")
+    }</tbody></table></div>`
+  : `<p class="empty">Atlas fills this in once Radar's research is done.</p>`;
+
+document.getElementById("inbox").innerHTML = STATE.inbox.map(i => `<li>${esc(i)}</li>`).join("");
+
+document.getElementById("log").innerHTML = STATE.log.map(l => {
+  const a = byId[l.who];
+  return `<li><time>${esc(l.t)}</time><span class="mini" style="--c:${a.c}">${avatar(a.look)}</span><span><b>${esc(a.name)}</b> ${esc(l.msg)}</span></li>`;
+}).join("");
+</script>
