@@ -1,6 +1,6 @@
 # 2026-10-21 — Real Cost: "X days in Puerto Rico: $___ total, every line item"
 
-**Status:** drafted, needs creator input (every cost and the number of days)
+**Status:** needs creator input (every cost, number of days, solo vs group)
 **Pillar:** Real Cost
 **Format:** Carousel, 9 slides
 **Goal:** Saves + follows
@@ -18,7 +18,7 @@
 2. "I tracked every dollar I spent in Puerto Rico. Total: [$___]."
 3. "What [X] days in Puerto Rico actually cost (receipts, not guesses): [$___]"
 
-Pick the one that fits the number. If the total turns out lower than people expect, go with #1. If it's high, #3's "receipts, not guesses" framing works better.
+**Chosen hook (editor): #1, "[X] days in Puerto Rico cost me [$___]. Every line item."** It leads with the number, which is the scroll-stopper on a cost carousel, and promises the swipe. Put "solo" or "for 2" on the cover too. A total without the head-count is the first thing commenters question. Fallback: if the total is high, use #3's "receipts, not guesses" framing.
 
 ---
 
@@ -28,9 +28,9 @@ Each slide: one photo from that category + big total for the category + 1–3 sh
 
 **Slide 1 — Cover (hook)**
 - Photo: your best wide shot of the trip (beach, Old San Juan street, or a view) [confirm footage]
-- Text: **[X] days in Puerto Rico: [$___] total**
+- Text: **[X] days in Puerto Rico cost me [$___]**
 - Small text: "every line item → swipe"
-- Optional small text: "[solo / for 2 people], [month] 2026"
+- Small text (required, not optional): "[solo / for 2 people], Oct 2026"
 
 **Slide 2 — Flights**
 - Photo: airport, plane window, or arrival shot [confirm footage]
@@ -55,7 +55,7 @@ Each slide: one photo from that category + big total for the category + 1–3 sh
   - "Rental: [$___] for [___] days (incl. insurance: [$___])"
   - "Gas: [$___] · Tolls: [$___] · Parking: [$___]"
   - "Ubers/taxis: [$___]"
-  - Optional tip line: "Tolls are electronic. Ask the rental company how they bill them [CHECK what your rental actually charged]"
+  - Optional tip line: "Tolls are electronic. Your rental's toll tag bills you later." (Verified 2026-10-11: rentals usually bill AutoExpreso tolls through the contract, as a daily fee or per use plus a fee, and cash lanes are rare.) Your actual toll and tag-fee amount comes from your final rental bill, which may arrive after you return the car. `[needs creator input]`
 
 **Slide 5 — Ferry** (skip this slide if you didn't take it, and renumber)
 - Photo: Ceiba ferry terminal, boat, or the water crossing [confirm footage]
@@ -70,7 +70,7 @@ Each slide: one photo from that category + big total for the category + 1–3 sh
 - Text: **Tours + activities: [$___]**
 - Sub-lines (one per thing you paid for):
   - "[Bio bay tour]: [$___]"
-  - "[El Yunque / fort entry / other]: [$___]"
+  - "[El Yunque / fort entry / other]: [$___]". Fort reference: the NPS fees page lists $10 per adult, valid 24 h for **both** El Morro and San Cristóbal, card only (no cash), and under-16s free. Use what you actually paid. If it matches, "$10 covers both forts" is a good tip line.
   - "[Other]: [$___]"
   - "Free stuff I loved: [beach / walking Old San Juan / ___]"
 
@@ -94,7 +94,7 @@ Each slide: one photo from that category + big total for the category + 1–3 sh
 - Text: **Total: [$___] ≈ [$___] a day**
 - Quick list: Flights [$___] · Stay [$___] · Getting around [$___] · Ferry [$___] · Tours [$___] · Food [$___] · Other [$___]
 - "What I'd do differently to save: [one line]"
-- CTA: "Save this for your PR trip + follow for the full route next week"
+- CTA: "Save this for your PR trip" (one CTA. The route carousel is 11-02, not "next week", so the follow line was dropped.)
 
 Before posting, add the category numbers together and check they match the cover and slide 9 totals.
 
@@ -110,9 +110,9 @@ Biggest surprise: [one line].
 Where I'd save next time: [one line].
 Where I wouldn't cut corners: [one line].
 
-If you're planning a Puerto Rico budget trip or building your Puerto Rico itinerary, save this so you have real numbers.
+Planning your Puerto Rico itinerary? Save this so you have real numbers.
 
-Questions about costs? Drop them below and I'll answer.
+(Use "Puerto Rico budget trip" as a keyword only if the total actually reads as budget. One CTA (save). Cost questions go to the Story question box.)
 
 Hashtags: #puertorico #puertoricotravel #caribbeantravel #vieques
 (Swap #vieques for #culebra if that's where you went, or drop it if you did neither. 3–5 tags per the research.)
@@ -121,9 +121,11 @@ Hashtags: #puertorico #puertoricotravel #caribbeantravel #vieques
 
 ---
 
-## Alt text (slide 1)
+## Alt text (add per slide; Instagram allows alt text on each carousel image)
 
-"Cover slide reading '[X] days in Puerto Rico: [$___] total' over a photo of [describe photo]. Carousel breaking down Puerto Rico trip costs: flights, stay, rental car, ferry, tours and food."
+- Slide 1: "Cover slide reading '[X] days in Puerto Rico cost me [$___]' over a photo of [describe photo]. Carousel breaking down Puerto Rico trip costs: flights, stay, rental car, ferry, tours and food."
+- Slides 2–8: "[Category]: [$___] over a photo of [describe]." Repeat the slide's key numbers so screen-reader users get the breakdown.
+- Slide 9: "Total [$___], about [$___] a day, with the category list."
 
 ## Location tag
 
@@ -160,3 +162,27 @@ Write these in your Notes app now (or snap receipts) while you remember. Total, 
 - [ ] **Cash vs card:** note anywhere that was cash-only (useful for a tip line)
 - [ ] **Free stuff you'd recommend:** beaches, walks, viewpoints (good for slide 6)
 - [ ] **Photos:** one per category (airport/plane, stay, car/road, ferry, tour, food, "other stuff", sunset). Take any that are missing before you leave.
+
+**Privacy check before posting:**
+- Never show raw receipts, booking screenshots or app history on a slide. Retype the numbers. Receipts show card digits, names, confirmation codes, addresses and booking dates.
+- Hide the rental car plate.
+- Keep "area" for the stay at neighborhood level or vaguer.
+- Home airport is optional (profile.md says home base only as specific as you're comfortable with).
+
+---
+
+## Editor notes
+
+_Reviewed 2026-10-11._
+
+- **Hook:** chose #1 ("[X] days in Puerto Rico cost me [$___]. Every line item."). The number does the stopping. Solo/for-2 is now required on the cover so the total is interpretable.
+- **CTA:** cut to one (save). The caption question and slide 9 "follow for the full route next week" were removed. "Next week" was wrong, since the route carousel is 11-02.
+- **Facts resolved:**
+  - Tolls: rentals usually bill AutoExpreso through the contract, and cash lanes are rare. Sources: https://tollguru.mapup.ai/puerto-rico-toll-roads and https://blog.autoslash.com/car-rental-in-puerto-rico/.
+  - Fort entry: the NPS fees page (https://nps.gov/saju/planyourvisit/fees.htm) lists $10 for 24 h covering both forts, card only, under-16 free. The search tool showed a possibly older cached copy, so confirm against what you paid.
+- **Mechanics:**
+  - Alt text is now per slide.
+  - Hashtags: 4 (fine). Keep #vieques/#culebra only if you went.
+  - "Budget" keyword is conditional on the real total.
+- **Privacy:** added a check against posting raw receipts/screenshots, plates or the exact stay location.
+- **Blocking, needs the creator:** every dollar figure, number of days/nights, solo or group (and whether costs are per person), which of ferry/bio bay/El Yunque/forts you actually did, and the three caption one-liners (biggest surprise, where you'd save, where you wouldn't cut corners). Do not post with estimates.

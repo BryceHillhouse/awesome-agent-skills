@@ -152,7 +152,7 @@ const STATE = {
     { name: "Research", s: "done", by: "Radar" },
     { name: "Plan", s: "done", by: "Atlas" },
     { name: "Draft", s: "done", by: "Quill" },
-    { name: "Edit", s: "working", by: "Margin" },
+    { name: "Edit", s: "done", by: "Margin" },
     { name: "Engage", s: "done", by: "Echo" },
     { name: "Analyze", s: "waiting", by: "Ledger" }
   ],
@@ -180,9 +180,13 @@ const STATE = {
         <li>Paying at a kiosko (hands only) and a food close-up</li>
         <li>15–20s of sunset with the phone propped still</li>
         <li>One photo per spending category for the cost carousel</li></ul>`, file: "instagram/drafts/" },
-    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "working",
-      task: "Editing the three drafts and checking fort hours, fees and toll rules.",
-      out: null, file: "instagram/drafts/" },
+    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "done",
+      task: "Edited all three drafts. Oct 19 and Oct 23 are ready; Oct 21 needs your numbers.",
+      out: `<b>Fact checks</b><ul>
+        <li>El Morro + San Cristóbal: $10 per adult covers both forts for 24 hours, card only (NPS; re-check on posting day).</li>
+        <li>Rental cars carry an AutoExpreso toll tag billed to your rental. Cash lanes are rare.</li>
+        <li>El Yunque's La Mina trail is still closed, with no reopening date.</li></ul>
+        <b>Also</b>: on-screen text cut to 8 words or fewer per beat, one call to action per post, no receipts or plates shown.`, file: "instagram/drafts/" },
     { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "done",
       task: "Engagement routine, 13-account list, two pitch drafts and three Story ideas are ready.",
       out: `<b>Daily 15–20 minutes</b><ul>
@@ -196,9 +200,9 @@ const STATE = {
       out: null, file: "instagram/insights/" }
   ],
   calendar: [
-    { date: "Mon Oct 19", format: "★ Reel", hook: "7 things I wish I knew before Puerto Rico", goal: "Reach + shares", status: "Drafted" },
-    { date: "Wed Oct 21", format: "★ Carousel", hook: "X days in Puerto Rico: $___ total, every line item", goal: "Saves + follows", status: "Drafted" },
-    { date: "Fri Oct 23", format: "★ Reel (POV)", hook: "POV: your first day in Old San Juan", goal: "Reach", status: "Drafted" },
+    { date: "Mon Oct 19", format: "★ Reel", hook: "7 things I wish I knew before Puerto Rico", goal: "Reach + shares", status: "Edited" },
+    { date: "Wed Oct 21", format: "★ Carousel", hook: "X days in Puerto Rico: $___ total, every line item", goal: "Saves + follows", status: "Needs your numbers" },
+    { date: "Fri Oct 23", format: "★ Reel (POV)", hook: "POV: your first day in Old San Juan", goal: "Reach", status: "Edited" },
     { date: "Mon Oct 26", format: "Carousel", hook: "Where I'd eat again in PR: Piñones kioskos to La Placita after dark", goal: "Saves + comments", status: "Idea" },
     { date: "Thu Oct 29", format: "Reel", hook: "El Yunque: what I expected vs what I got", goal: "Reach", status: "Idea" },
     { date: "Mon Nov 2", format: "Carousel (map)", hook: "The Puerto Rico route I'd do again, stop by stop", goal: "Saves + follows", status: "Idea" },
@@ -206,13 +210,15 @@ const STATE = {
     { date: "Fri Nov 6", format: "Carousel", hook: "Is Puerto Rico worth it in November? My honest take", goal: "Follows + community", status: "Idea" }
   ],
   inbox: [
-    "Save receipts and note what you spend each day. The Oct 21 cost carousel needs real numbers.",
+    "Save receipts and note what you spend each day. The Oct 21 cost carousel needs real numbers, trip length and solo or group.",
+    "Tell Margin which tips really happened to you (tolls, ferry, bio bay) so the Oct 19 Reel stays true.",
     "Tell the team where you've been in Puerto Rico so far and where you're heading next.",
     "Approve or change Atlas's angle and bio (on Atlas's desk).",
     "Keep shooting short vertical clips, food, prices and a few shots with you in them.",
     "Switch to a Professional (Creator) account if you haven't, so Ledger can read Insights."
   ],
   log: [
+    { t: "today", who: "margin", msg: "Edited three drafts; fact-checked fort fees, tolls and El Yunque." },
     { t: "today", who: "echo", msg: "Filed the engagement list, pitches and Story ideas." },
     { t: "today", who: "margin", msg: "Started editing the three drafts." },
     { t: "today", who: "quill", msg: "Filed drafts for Oct 19, 21 and 23 with filming checklists." },
