@@ -17,7 +17,7 @@ Fill this in (or run `/ig-growth` and the team will interview you). The agents r
 - Trips already taken that have unused photos/video (place, when, what you did):
   -
 - Upcoming trips:
-  -
+  - Puerto Rico — in progress (Oct 2026). Capture footage now; post after leaving each spot (no real-time location).
 - Travel style (budget / luxury / backpacking / weekend trips / road trips / food / outdoors / solo / couple / family):
 
 ## Media
