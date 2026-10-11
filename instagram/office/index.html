@@ -150,10 +150,10 @@ const STATE = {
   updated: "2026-10-11",
   pipeline: [
     { name: "Research", s: "done", by: "Radar" },
-    { name: "Plan", s: "working", by: "Atlas" },
-    { name: "Draft", s: "waiting", by: "Quill" },
+    { name: "Plan", s: "done", by: "Atlas" },
+    { name: "Draft", s: "working", by: "Quill" },
     { name: "Edit", s: "waiting", by: "Margin" },
-    { name: "Engage", s: "waiting", by: "Echo" },
+    { name: "Engage", s: "working", by: "Echo" },
     { name: "Analyze", s: "waiting", by: "Ledger" }
   ],
   agents: [
@@ -165,29 +165,46 @@ const STATE = {
         <li>Hooks: hurricane season ends Nov 30; bio bays glow brightest near the Nov 9 new moon; Discovery Day Nov 19 kicks off PR's long Christmas season.</li>
         <li>Instagram now caps hashtags at 5, so captions and alt text carry search.</li>
       </ul>`, file: "instagram/research/2026-10-11-puerto-rico.md" },
-    { id: "atlas", name: "Atlas", role: "Strategist", c: "#f2b880", look: "atlas", s: "working",
-      task: "Drafting your positioning, bio and an 8-post Puerto Rico plan.",
-      out: null, file: "instagram/content-calendar.md" },
-    { id: "quill", name: "Quill", role: "Content creator", c: "#c9a7eb", look: "quill", s: "waiting",
-      task: "Will draft Reel scripts, carousels and captions for the plan.",
+    { id: "atlas", name: "Atlas", role: "Strategist", c: "#f2b880", look: "atlas", s: "done",
+      task: "Positioning, bio and the 8-post Puerto Rico plan are on the whiteboard.",
+      out: `<b>Proposed angle</b><br>"Honest trip breakdowns for regular travelers: what it really costs, what I wish I'd known, and the spots worth your time."
+        <ul><li>Pillars: Wish I Knew · Real Cost · Worth It? · Eat Here</li>
+        <li>Bio: "Real trips, real costs. What I wish I'd known + the spots worth it. Now posting: Puerto Rico. Save a post for your next trip."</li>
+        <li>Cadence: 2–3 feed posts a week plus Stories, same time of day each post.</li></ul>`, file: "instagram/content-calendar.md" },
+    { id: "quill", name: "Quill", role: "Content creator", c: "#c9a7eb", look: "quill", s: "working",
+      task: "Drafting the three starred posts: wish-I-knew Reel, real-cost carousel, Old San Juan POV.",
       out: null, file: "instagram/drafts/" },
     { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "waiting",
       task: "Will tighten hooks, cut clichés and fact-check the drafts.",
       out: null, file: "instagram/drafts/" },
-    { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "waiting",
-      task: "Will build a daily engagement list and collab pitch drafts.",
+    { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "working",
+      task: "Building a Puerto Rico engagement list, collab pitch drafts and Story ideas.",
       out: null, file: "instagram/drafts/outreach-*.md" },
     { id: "ledger", name: "Ledger", role: "Growth analyst", c: "#a9c4f2", look: "ledger", s: "waiting",
       task: "Waiting for your first Insights export to set a baseline.",
       out: null, file: "instagram/insights/" }
   ],
-  calendar: [],
+  calendar: [
+    { date: "Mon Oct 19", format: "★ Reel", hook: "7 things I wish I knew before Puerto Rico", goal: "Reach + shares", status: "Drafting" },
+    { date: "Wed Oct 21", format: "★ Carousel", hook: "X days in Puerto Rico: $___ total, every line item", goal: "Saves + follows", status: "Drafting" },
+    { date: "Fri Oct 23", format: "★ Reel (POV)", hook: "POV: your first day in Old San Juan", goal: "Reach", status: "Drafting" },
+    { date: "Mon Oct 26", format: "Carousel", hook: "Where I'd eat again in PR: Piñones kioskos to La Placita after dark", goal: "Saves + comments", status: "Idea" },
+    { date: "Thu Oct 29", format: "Reel", hook: "El Yunque: what I expected vs what I got", goal: "Reach", status: "Idea" },
+    { date: "Mon Nov 2", format: "Carousel (map)", hook: "The Puerto Rico route I'd do again, stop by stop", goal: "Saves + follows", status: "Idea" },
+    { date: "Wed Nov 4", format: "Reel", hook: "Plan your bio bay night around the moon. Here's why", goal: "Reach + shares", status: "Idea" },
+    { date: "Fri Nov 6", format: "Carousel", hook: "Is Puerto Rico worth it in November? My honest take", goal: "Follows + community", status: "Idea" }
+  ],
   inbox: [
+    "Save receipts and note what you spend each day. The Oct 21 cost carousel needs real numbers.",
     "Tell the team where you've been in Puerto Rico so far and where you're heading next.",
+    "Approve or change Atlas's angle and bio (on Atlas's desk).",
     "Keep shooting short vertical clips, food, prices and a few shots with you in them.",
     "Switch to a Professional (Creator) account if you haven't, so Ledger can read Insights."
   ],
   log: [
+    { t: "today", who: "echo", msg: "Started the engagement list and collab pitches." },
+    { t: "today", who: "quill", msg: "Started drafting the three starred posts." },
+    { t: "today", who: "atlas", msg: "Put the 8-post Puerto Rico plan on the whiteboard." },
     { t: "today", who: "atlas", msg: "Started the Puerto Rico plan and positioning." },
     { t: "today", who: "radar", msg: "Filed the Puerto Rico research brief (formats, hooks, hashtags, travel facts)." },
     { t: "today", who: "radar", msg: "Started Puerto Rico trend research." },
