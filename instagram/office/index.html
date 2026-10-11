@@ -152,7 +152,7 @@ const STATE = {
     { name: "Research", s: "done", by: "Radar" },
     { name: "Plan", s: "done", by: "Atlas" },
     { name: "Draft", s: "done", by: "Quill" },
-    { name: "Edit", s: "working", by: "Margin" },
+    { name: "Edit", s: "done", by: "Margin" },
     { name: "Engage", s: "done", by: "Echo" },
     { name: "Analyze", s: "waiting", by: "Ledger" }
   ],
@@ -179,9 +179,12 @@ const STATE = {
         <li>Flow: badge-on selfie → convention views → room view → I ❤ PR → La Placita → ceviche → tacos + margarita → late-night arepa.</li>
         <li>Fixes: blur the badge, crop two finger shots, rotate the arepa and tacos.</li></ul>`,
       file: "instagram/drafts/" },
-    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "working",
-      task: "Editing the work-trip carousel: privacy, hook and fact check on La Placita.",
-      out: null, file: "instagram/drafts/" },
+    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "done",
+      task: "Edited the work-trip carousel. It's waiting on your answers in the Needs you box.",
+      out: `<b>New cover</b>: "Work trip to Puerto Rico. Nights were mine."<ul>
+        <li>Honest food labels: "Mexican night: tacos + chili-rim margarita", "Zero mofongo (yet), but I ate well".</li>
+        <li>Stronger badge blur, nothing that identifies the hotel, city-level location tag only.</li>
+        <li>Confirmed: La Placita is a produce market by day and a street party from about 6 pm, busiest Thursday to Sunday.</li></ul>`, file: "instagram/drafts/" },
     { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "done",
       task: "Engagement routine, 13-account list, two pitch drafts and three Story ideas are ready.",
       out: `<b>Daily 15–20 minutes</b><ul>
@@ -195,7 +198,7 @@ const STATE = {
       out: null, file: "instagram/insights/" }
   ],
   calendar: [
-    { date: "Mon Oct 19", format: "★ Carousel", hook: "Work trip to Puerto Rico: what I did after the conference", goal: "Saves + follows", status: "Editing" },
+    { date: "Mon Oct 19", format: "★ Carousel", hook: "Work trip to Puerto Rico. Nights were mine.", goal: "Saves + follows", status: "Needs your input" },
     { date: "Wed Oct 21", format: "Carousel", hook: "What my free time on a work trip actually cost", goal: "Saves", status: "Needs your numbers" },
     { date: "Fri Oct 23", format: "Reel", hook: "Conference badge by day. La Placita by night.", goal: "Reach", status: "Idea" },
     { date: "Mon Oct 26", format: "Carousel", hook: "Conference in San Juan? 5 things I wish I knew", goal: "Saves + shares", status: "Idea" },
@@ -210,9 +213,11 @@ const STATE = {
     "Before you leave: one Puerto Rican dish (mofongo or alcapurrias), daytime Old San Juan or a beach, and a slow 10-second walk through La Placita.",
     "Tell us your checkout date. Hotel-view and selfie slides go up after that.",
     "How often do you travel for work? That decides whether the work-trip angle sticks.",
-    "Approve or tweak the new bio on Atlas's desk."
+    "Approve or tweak the new bio on Atlas's desk.",
+    "One line on what La Placita at night was really like, in your words."
   ],
   log: [
+    { t: "today", who: "margin", msg: "Edited the work-trip carousel; new cover: \"Nights were mine.\"" },
     { t: "today", who: "margin", msg: "Started editing the work-trip carousel." },
     { t: "today", who: "quill", msg: "Drafted the after-hours carousel and Reel from 11 real photos and 1 clip." },
     { t: "today", who: "atlas", msg: "Switched the angle to work trips after the photo dump; parked shots with no footage." },
