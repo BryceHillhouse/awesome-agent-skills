@@ -146,13 +146,13 @@ footer { color: var(--muted); font-size: 12.5px }
 <script>
 // ---- Office state (Claude updates this block and republishes) ----
 const STATE = {
-  campaign: "Puerto Rico · Oct 2026",
+  campaign: "Puerto Rico work trip · Oct 2026",
   updated: "2026-10-11",
   pipeline: [
     { name: "Research", s: "done", by: "Radar" },
     { name: "Plan", s: "done", by: "Atlas" },
     { name: "Draft", s: "done", by: "Quill" },
-    { name: "Edit", s: "done", by: "Margin" },
+    { name: "Edit", s: "working", by: "Margin" },
     { name: "Engage", s: "done", by: "Echo" },
     { name: "Analyze", s: "waiting", by: "Ledger" }
   ],
@@ -166,27 +166,22 @@ const STATE = {
         <li>Instagram now caps hashtags at 5, so captions and alt text carry search.</li>
       </ul>`, file: "instagram/research/2026-10-11-puerto-rico.md" },
     { id: "atlas", name: "Atlas", role: "Strategist", c: "#f2b880", look: "atlas", s: "done",
-      task: "Positioning, bio and the 8-post Puerto Rico plan are on the whiteboard.",
-      out: `<b>Proposed angle</b><br>"Honest trip breakdowns for regular travelers: what it really costs, what I wish I'd known, and the spots worth your time."
-        <ul><li>Pillars: Wish I Knew · Real Cost · Worth It? · Eat Here</li>
-        <li>Bio: "Real trips, real costs. What I wish I'd known + the spots worth it. Now posting: Puerto Rico. Save a post for your next trip."</li>
-        <li>Cadence: 2–3 feed posts a week plus Stories, same time of day each post.</li></ul>`, file: "instagram/content-calendar.md" },
+      task: "Re-angled the plan around your work trip after seeing the photo dump.",
+      out: `<b>New angle</b><br>"Work trips turned into real trips: what to do after the conference, what it actually costs, and what's worth your few free hours."
+        <ul><li>Name: Bryce | Work Trips &amp; Travel Tips</li>
+        <li>Bio: "Turning work trips into real trips. After-hours eats, nights out + honest costs. Now: Puerto Rico. Save for your next work trip."</li>
+        <li>New pillar: After Hours. El Yunque, bio bay and Piñones are parked until there's footage.</li></ul>`,
+      file: "instagram/content-calendar.md" },
     { id: "quill", name: "Quill", role: "Content creator", c: "#c9a7eb", look: "quill", s: "done",
-      task: "Three starred posts drafted, each with a filming checklist for the rest of your trip.",
-      out: `<b>Film these before you leave</b><ul>
-        <li>10s+ walking shot on the blue cobblestones, early morning (3–4 takes)</li>
-        <li>El Morro wide shot and a pan from the walls out to the ocean</li>
-        <li>Rental car walk-up (hide the plate), a toll gantry filmed by a passenger, the Ceiba ferry terminal if you go</li>
-        <li>Paying at a kiosko (hands only) and a food close-up</li>
-        <li>15–20s of sunset with the phone propped still</li>
-        <li>One photo per spending category for the cost carousel</li></ul>`, file: "instagram/drafts/" },
-    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "done",
-      task: "Edited all three drafts. Oct 19 and Oct 23 are ready; Oct 21 needs your numbers.",
-      out: `<b>Fact checks</b><ul>
-        <li>El Morro + San Cristóbal: $10 per adult covers both forts for 24 hours, card only (NPS; re-check on posting day).</li>
-        <li>Rental cars carry an AutoExpreso toll tag billed to your rental. Cash lanes are rare.</li>
-        <li>El Yunque's La Mina trail is still closed, with no reopening date.</li></ul>
-        <b>Also</b>: on-screen text cut to 8 words or fewer per beat, one call to action per post, no receipts or plates shown.`, file: "instagram/drafts/" },
+      task: "Drafted a 10-slide carousel from your real photos, plus a 10-second Reel cut.",
+      out: `<b>Work trip to Puerto Rico: after-hours edition</b><ul>
+        <li>Cover: the red "Esto es La Calle" screen framed by palms.</li>
+        <li>Flow: badge-on selfie → convention views → room view → I ❤ PR → La Placita → ceviche → tacos + margarita → late-night arepa.</li>
+        <li>Fixes: blur the badge, crop two finger shots, rotate the arepa and tacos.</li></ul>`,
+      file: "instagram/drafts/" },
+    { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "working",
+      task: "Editing the work-trip carousel: privacy, hook and fact check on La Placita.",
+      out: null, file: "instagram/drafts/" },
     { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "done",
       task: "Engagement routine, 13-account list, two pitch drafts and three Story ideas are ready.",
       out: `<b>Daily 15–20 minutes</b><ul>
@@ -200,24 +195,27 @@ const STATE = {
       out: null, file: "instagram/insights/" }
   ],
   calendar: [
-    { date: "Mon Oct 19", format: "★ Reel", hook: "7 things I wish I knew before Puerto Rico", goal: "Reach + shares", status: "Edited" },
-    { date: "Wed Oct 21", format: "★ Carousel", hook: "X days in Puerto Rico: $___ total, every line item", goal: "Saves + follows", status: "Needs your numbers" },
-    { date: "Fri Oct 23", format: "★ Reel (POV)", hook: "POV: your first day in Old San Juan", goal: "Reach", status: "Edited" },
-    { date: "Mon Oct 26", format: "Carousel", hook: "Where I'd eat again in PR: Piñones kioskos to La Placita after dark", goal: "Saves + comments", status: "Idea" },
-    { date: "Thu Oct 29", format: "Reel", hook: "El Yunque: what I expected vs what I got", goal: "Reach", status: "Idea" },
-    { date: "Mon Nov 2", format: "Carousel (map)", hook: "The Puerto Rico route I'd do again, stop by stop", goal: "Saves + follows", status: "Idea" },
-    { date: "Wed Nov 4", format: "Reel", hook: "Plan your bio bay night around the moon. Here's why", goal: "Reach + shares", status: "Idea" },
-    { date: "Fri Nov 6", format: "Carousel", hook: "Is Puerto Rico worth it in November? My honest take", goal: "Follows + community", status: "Idea" }
+    { date: "Mon Oct 19", format: "★ Carousel", hook: "Work trip to Puerto Rico: what I did after the conference", goal: "Saves + follows", status: "Editing" },
+    { date: "Wed Oct 21", format: "Carousel", hook: "What my free time on a work trip actually cost", goal: "Saves", status: "Needs your numbers" },
+    { date: "Fri Oct 23", format: "Reel", hook: "Conference badge by day. La Placita by night.", goal: "Reach", status: "Idea" },
+    { date: "Mon Oct 26", format: "Carousel", hook: "Conference in San Juan? 5 things I wish I knew", goal: "Saves + shares", status: "Idea" },
+    { date: "Thu Oct 29", format: "Carousel", hook: "Everything I ate after work in San Juan (zero mofongo… yet)", goal: "Saves + comments", status: "Idea" },
+    { date: "Mon Nov 2", format: "Reel (POV)", hook: "POV: your first day in Old San Juan", goal: "Reach", status: "At risk: no footage" },
+    { date: "Wed Nov 4", format: "Carousel", hook: "Turn a San Juan work trip into a long weekend: the plan + cost", goal: "Saves + follows", status: "Idea" },
+    { date: "Fri Nov 6", format: "Carousel", hook: "Is Puerto Rico worth it for a work trip? My honest take", goal: "Follows", status: "Idea" }
   ],
   inbox: [
-    "Save receipts and note what you spend each day. The Oct 21 cost carousel needs real numbers, trip length and solo or group.",
-    "Tell Margin which tips really happened to you (tolls, ferry, bio bay) so the Oct 19 Reel stays true.",
-    "Tell the team where you've been in Puerto Rico so far and where you're heading next.",
-    "Approve or change Atlas's angle and bio (on Atlas's desk).",
-    "Keep shooting short vertical clips, food, prices and a few shots with you in them.",
-    "Switch to a Professional (Creator) account if you haven't, so Ledger can read Insights."
+    "Name the spots: ceviche, tacos + margarita, and the arepa place.",
+    "Okay to say it was a work trip? Check if your employer or the event has rules on posting.",
+    "Before you leave: one Puerto Rican dish (mofongo or alcapurrias), daytime Old San Juan or a beach, and a slow 10-second walk through La Placita.",
+    "Tell us your checkout date. Hotel-view and selfie slides go up after that.",
+    "How often do you travel for work? That decides whether the work-trip angle sticks.",
+    "Approve or tweak the new bio on Atlas's desk."
   ],
   log: [
+    { t: "today", who: "margin", msg: "Started editing the work-trip carousel." },
+    { t: "today", who: "quill", msg: "Drafted the after-hours carousel and Reel from 11 real photos and 1 clip." },
+    { t: "today", who: "atlas", msg: "Switched the angle to work trips after the photo dump; parked shots with no footage." },
     { t: "today", who: "margin", msg: "Edited three drafts; fact-checked fort fees, tolls and El Yunque." },
     { t: "today", who: "echo", msg: "Filed the engagement list, pitches and Story ideas." },
     { t: "today", who: "margin", msg: "Started editing the three drafts." },
