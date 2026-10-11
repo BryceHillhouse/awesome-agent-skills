@@ -153,7 +153,7 @@ const STATE = {
     { name: "Plan", s: "done", by: "Atlas" },
     { name: "Draft", s: "done", by: "Quill" },
     { name: "Edit", s: "working", by: "Margin" },
-    { name: "Engage", s: "working", by: "Echo" },
+    { name: "Engage", s: "done", by: "Echo" },
     { name: "Analyze", s: "waiting", by: "Ledger" }
   ],
   agents: [
@@ -183,9 +183,14 @@ const STATE = {
     { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "working",
       task: "Editing the three drafts and checking fort hours, fees and toll rules.",
       out: null, file: "instagram/drafts/" },
-    { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "working",
-      task: "Building a Puerto Rico engagement list, collab pitch drafts and Story ideas.",
-      out: null, file: "instagram/drafts/outreach-*.md" },
+    { id: "echo", name: "Echo", role: "Community manager", c: "#9fd38f", look: "echo", s: "done",
+      task: "Engagement routine, 13-account list, two pitch drafts and three Story ideas are ready.",
+      out: `<b>Daily 15–20 minutes</b><ul>
+        <li>Reply to every comment in the first hour after posting.</li>
+        <li>Leave real comments on 4–5 accounts from the list (each has a sample).</li>
+        <li>Search one keyword like #puertoricotravel for small creators to connect with.</li></ul>
+        <b>Pitches</b>: a Collab post with a small PR creator, and a feature offer to a food spot or tour (no freebies asked).
+        <br><b>Note</b>: none of the accounts were checked inside Instagram, so look before you engage.`, file: "instagram/drafts/outreach-*.md" },
     { id: "ledger", name: "Ledger", role: "Growth analyst", c: "#a9c4f2", look: "ledger", s: "waiting",
       task: "Waiting for your first Insights export to set a baseline.",
       out: null, file: "instagram/insights/" }
@@ -208,6 +213,7 @@ const STATE = {
     "Switch to a Professional (Creator) account if you haven't, so Ledger can read Insights."
   ],
   log: [
+    { t: "today", who: "echo", msg: "Filed the engagement list, pitches and Story ideas." },
     { t: "today", who: "margin", msg: "Started editing the three drafts." },
     { t: "today", who: "quill", msg: "Filed drafts for Oct 19, 21 and 23 with filming checklists." },
     { t: "today", who: "echo", msg: "Started the engagement list and collab pitches." },
