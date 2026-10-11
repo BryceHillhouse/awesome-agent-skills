@@ -18,9 +18,18 @@ The creator keeps the original files on their phone. This log describes each one
 | P9 | Palms + waterfall fountain by a modern glass building (convention area) [CHECK] | "Where the conference was" slide | Finger blur bottom-left — crop |
 | P10 | Ocean view from hotel window: palm, beach, loungers, breakwater | "View from my room" slide | Shot through glass (reflections). Reveals the hotel: post only after checkout |
 | P11 | Plaza with long reflecting pool, cranes, blue sky (convention district) [CHECK] | B-roll / context slide | Finger blur bottom — crop |
+| P12 | Old San Juan plaza in daylight: round fountain, white marble statues, pale colonial building with inscription, yellow and coral buildings, big clouds. Looks like Plaza de Armas [CHECK] | Daytime Old San Juan slide or Reel opener; strongest landscape shot so far | Landscape (4:3): crop to 4:5 around the fountain. Strangers in background are small |
+| P13 | Bedroom in a colonial building: half-moon arched windows, long grey curtains, travertine floor, zebra chair | Stay tour slide ("where I stayed") | Reveals the rental: post after checkout, no listing name. Charger cable on floor |
+| P14 | Same bedroom, wide: two arched windows under dark wood ceiling beams | Best stay photo; cover option for a stay post | Same as P13 |
+| P15 | Looking down from a loft through a white arch: spiral stair, galley kitchen, glass table, orange and white chairs | Stay tour slide; striking composition | Same as P13. Front door lock visible, fine |
+| P16 | Spiral staircase from above, tilted | Reel B-roll (rotate into motion) | Shot at an angle; use as a quick cut, not a slide |
+| P17 | Colonial stairwell: checkerboard marble steps, dark turned-wood railing, potted plants | Stay or "Old San Juan details" slide; very on-aesthetic | Same as P13 |
+| P18 | Skylight over a white atrium, window-grid shadows on the walls | Mood slide / Reel transition | Satellite dish visible top-left; crop |
+
+**Update:** P12–P18 show daytime Old San Juan and a stay inside a colonial building (likely a rental, separate from the beachfront room in P10 [ask Bryce: one stay or two?]).
 
 ## Gaps to fill before leaving
 - Any **Puerto Rican** dish (mofongo, alcapurrias, pastelón) — the food set is all Venezuelan/Mexican so far.
-- Daytime outside the conference area: Old San Juan, a beach you actually walked on.
-- 5–8s clips (most of what we have are photos). A 10s walk-through at La Placita would anchor the Reel.
+- ~~Daytime Old San Juan~~ (P12 covers it). Still missing: a beach you actually walked on.
+- 5–8s clips (most of what we have are photos). A 10s walk-through at La Placita, and a slow pan of the arched bedroom windows plus walking down the spiral stairs, would anchor two Reels.
 - Clean the lens and keep fingers clear of the bottom corners.
