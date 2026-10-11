@@ -32,3 +32,8 @@ Fill this in (or run `/ig-growth` and the team will interview you). The agents r
 ## Current account
 - What's on the grid now (mix of personal/travel):
 - Posts that did best so far:
+
+## Decisions (Puerto Rico work trip, confirmed by Bryce 2026-10-11)
+- The conference (employer/event) can be mentioned in posts. Still blur names on badges.
+- Do not name any restaurants (copy, alt text, location tags, Stories). Crop or blur menus, wrappers and logos.
+- Bryce stayed only at the beachfront hotel (P10 view; never name the hotel). The colonial apartment photos (P13–P18) are not where they stayed, so no post may say or imply that they did.

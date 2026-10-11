@@ -4,14 +4,18 @@
 - **Pillar:** Worth It? / Eat Here crossover (after-hours on a work trip)
 - **Format:** Carousel, 10 slides (4:5 portrait), with an optional Reel variant below
 - **Goal:** Saves (single CTA = save)
-- **Status:** needs creator input (edited 2026-10-11. Blocked on restaurant names, checkout date and employer posting rules)
+- **Status:** edited 2026-10-11. Can be scheduled once Bryce confirms the checkout date. Two small copy confirmations remain (see Open items).
 - **Media:** only the real photos and video from `instagram/media/2026-10-puerto-rico.md` (P1–P11, V1). Nothing needs to be shot.
 
 > **Voice note:** `profile.md` has no voice info yet, so the copy is casual first person as a placeholder. Tune it once Bryce answers the voice questions.
 >
 > **Posting guardrail:** post only **after Bryce has checked out of the hotel**. P10 (room view) and probably P7 (mirror selfie) show the hotel. **Never name the hotel** in the copy, the alt text, the location tag or Stories. Use a city-level location tag only.
 >
-> **Food honesty:** the arepa is Venezuelan-style and the tacos and margarita look like they're from a Mexican spot. Present them as San Juan's food scene being more than mofongo. **Don't** call them Puerto Rican dishes. Restaurant names are unknown, so they're marked `[ask Bryce]`.
+> **Food honesty:** the arepa is Venezuelan-style and the tacos and margarita look like they're from a Mexican spot. Present them as San Juan's food scene being more than mofongo. **Don't** call them Puerto Rican dishes.
+>
+> **No restaurant names (Bryce's decision, 2026-10-11).** Don't name, tag or hint at any restaurant in the copy, alt text, location tag or Stories. Crop or blur any logo, menu header or wrapper print so no business is identifiable.
+>
+> **Conference:** Bryce confirmed the conference can be mentioned. The badge name still gets blurred.
 
 ---
 
@@ -37,13 +41,13 @@ On-slide text is ≤8 words per slide. Put the text in the top or bottom third, 
 | 1 | **P2** | "Work trip to Puerto Rico. / Nights were mine." | None. Crop to 4:5 and keep the red screen and palm fronds in frame |
 | 2 | **P7** (mirror selfie) | "Daytime: badge on, conference mode." | **Blur the badge fully** (full name and event name), including the lanyard print if it carries an event or company logo. Use a solid blur, not a light one. Check that no hotel branding shows in the mirror, on towels or on signage. Post after checkout |
 | 3 | **P11** (plaza, reflecting pool, cranes) | "Between sessions, this was my view." `[CHECK: true for you?]` | **Crop the finger blur** at the bottom |
-| 4 | **P9** (palms, waterfall fountain, glass building) | "Not a bad place for a conference." | **Crop the finger blur** at bottom-left. Don't name the building or venue (`[CHECK]` location). Skip this slide if the employer limits posting from the venue (Q12) |
+| 4 | **P9** (palms, waterfall fountain, glass building) | "Not a bad place for a conference." | **Crop the finger blur** at bottom-left. Don't name the building or venue (`[CHECK]` location). Employer/event posting is OK per Bryce |
 | 5 | **P10** (ocean view from room) | "Room view after the last session." | Shot through glass: crop tight or lower the highlights to cut reflections. **This shows the hotel, so post only after checkout.** No hotel name, no hotel tag, and nothing in the frame that identifies the property (signage, branded umbrellas) |
 | 6 | **P8** ("I ❤ PR" sign) | "Then the badge came off." | None |
 | 7 | **P1** (La Placita at night) | "La Placita de Santurce after dark" | None. Faces in the crowd are incidental in a wide shot |
-| 8 | **P4** (ceviche) | "Fish ceviche, avocado, pickled onion. Yes." | None. Restaurant `[ask Bryce]` |
-| 9 | **P6 + P5** (split slide: tacos left, margarita right) | "Mexican night: tacos + chili-rim margarita" | **Rotate P6** (shot sideways). P5's menu reads "Lupe Reyes". Restaurant `[ask Bryce]`. If Bryce doesn't want the spot identifiable, crop the menu out |
-| 10 | **P3** (arepa) | "Late-night arepa, Venezuelan-style. Save this." | **Rotate P3** (shot sideways). Wrapper reads "Arepas Lovers". Restaurant `[ask Bryce]`. Crop the wrapper if it shouldn't be named |
+| 8 | **P4** (ceviche) | "Fish ceviche, avocado, pickled onion. Yes." | Check plates, napkins and table edges for any printed logo and crop or blur it. No restaurant name anywhere |
+| 9 | **P6 + P5** (split slide: tacos left, margarita right) | "Mexican night: tacos + chili-rim margarita" | **Rotate P6** (shot sideways). **P5: crop out the menu, or blur its header and logo fully** so the business can't be identified. Check glassware and coasters for logos too |
+| 10 | **P3** (arepa) | "Late-night arepa, Venezuelan-style. Save this." | **Rotate P3** (shot sideways). **Crop or solidly blur the wrapper print** so the business name can't be read. Check the takeout box for a logo too |
 
 Slide 10 is the arepa with the save prompt on it. If you'd rather have a dedicated end card, merge slides 3 and 4 into one split slide (P11 + P9) and add an end card: "Work trip to San Juan? Save this." over a dimmed P2.
 
@@ -59,9 +63,9 @@ Days were badge-and-lanyard mode in San Juan. Nights were mine.
 Most of my free time ended up at La Placita de Santurce: a market by day, a street party after dark. Neon, music, packed bars. [ask Bryce: one line on what your night there was actually like]
 
 Zero mofongo (yet), but I ate well:
-- fish ceviche with avocado and pickled onion at [ask Bryce]
-- tacos + a chili-rim margarita at a Mexican spot, [ask Bryce]
-- a late-night Venezuelan arepa from [ask Bryce]
+- fish ceviche piled with avocado and pickled onion
+- tacos and a chili-rim margarita on a Mexican night
+- a late-night Venezuelan arepa, stuffed with shredded beef and cheese
 
 Work trip to San Juan coming up? Save this for your free nights.
 ```
@@ -78,7 +82,7 @@ Work trip to San Juan coming up? Save this for your free nights.
 
 ## Location tag
 
-**San Juan, Puerto Rico** (city level). Don't tag the hotel, the convention venue or a restaurant.
+**San Juan, Puerto Rico** (city level). Don't tag the hotel, the convention venue or any restaurant.
 
 ## Alt text (per slide)
 
@@ -119,26 +123,27 @@ Add a slow push-in (Ken Burns) to the stills so they move like video. **Reel cap
 1. **Poll** over P7 (badge blurred): "Work trip free time: explore or crash in the room?" Options: "Explore" / "Room service".
 2. **Quiz** over P3: "Which one ISN'T a Puerto Rican dish?" Options: Mofongo / Alcapurria / Arepa (answer: Arepa, which is Venezuelan). Ties into the "more than mofongo" angle.
 3. **Reshare the new post** with the sticker text "What I did after the conference". Point to it with a "tap to see" arrow.
-4. **Question box** over P1: "Where should I get mofongo next time in San Juan?"
+4. **Question box** over P1: "Where should I get mofongo next time in San Juan?" If replies name restaurants, don't reshare them publicly (no-restaurant-names rule). Answer by DM instead.
 
 ---
 
 ## Open items for Bryce
 
-- Names of the restaurants for the ceviche (P4), the tacos and margarita (P5/P6, menu says "Lupe Reyes"), and the arepa (P3, wrapper says "Arepas Lovers"). OK to name them, or crop the menu and wrapper?
-- One line on what La Placita at night was actually like, and is it true that most of your free time went there?
-- Is slide 3's "between sessions" true? Were P9 and P11 taken near the conference venue?
-- Checkout or departure date. The post can't go up before then (P10, P7).
-- Employer or event social media rules (Q12). Are photos from the venue area (P9, P11) and a blurred badge OK?
+- **Checkout date (blocking).** The post can't go up before then (P10, P7).
+- One line on what La Placita at night was actually like, and is it true that most of your free time went there? If Bryce skips this, delete the `[ask Bryce]` line and the caption still works.
+- Is slide 3's "between sessions" true? Were P9 and P11 taken near the conference venue? If not, change slide 3 to "Daytime view in San Juan." and drop "near the conference" from alt text 3 and 4.
 - Archive `2026-10-19-wish-i-knew-pr.md` so it doesn't get scheduled on the same day.
+
+**Resolved 2026-10-11:** restaurant names (none will be named; menu and wrapper logos get cropped or blurred). Employer/event rules (the conference can be mentioned and venue-area photos are OK; the badge name stays blurred).
 
 ## Editor notes
 
 - **Hook:** cover text rewritten from "Work trip to Puerto Rico: after-hours edition" (a label) to "Work trip to Puerto Rico. Nights were mine." (8 words). It keeps the search phrase and adds a day-versus-night contrast. The cover, the Reel cover and the alt text now match.
 - **Slide text:** every slide is ≤8 words. Slide 9 now says "Mexican night" so the cuisine label is on the slide itself, not only in the caption.
-- **Caption:** tightened. Dropped the filler "Proof that..." line. "San Juan's food scene is way more than mofongo" became "Zero mofongo (yet), but I ate well", because the old line implied the dishes showed San Juan's local food when they're Mexican and Venezuelan. One CTA (save). Removed the "Arepas Lovers?" guess from the caption. All restaurant names stay `[ask Bryce]`.
+- **Caption:** tightened. Dropped the filler "Proof that..." line. "San Juan's food scene is way more than mofongo" became "Zero mofongo (yet), but I ate well", because the old line implied the dishes showed San Juan's local food when they're Mexican and Venezuelan. One CTA (save).
+- **Restaurant names (2026-10-11 pass):** Bryce decided no restaurants are named. All three `[ask Bryce]` restaurant placeholders were removed and the food lines now just describe the dishes (no "near La Placita", since where they were eaten isn't confirmed). Slides 8–10 now say to crop or solidly blur the P5 menu, the P3 wrapper and any other logos. The menu and wrapper text transcriptions were deleted from the draft so they can't leak into copy. The Story question box notes not to reshare replies that name spots.
 - **Facts:** the La Placita "market by day, nightlife by night" claim is verified and cited in the caption section (Discover Puerto Rico, Wikipedia, Islands.com).
-- **Hashtags:** 4, within the 5 cap. Swapped `#puertoricofood` for `#sanjuanpuertorico` because none of the food is Puerto Rican.
-- **Privacy:** stronger badge-blur instruction (name, event and any logo on the lanyard). P10 is gated on checkout, with no identifying hotel details in the frame or alt text ("hotel window" became "window"). P9 is conditional on employer rules. Location tag stays city-level. The Reel's "Conference by day" beat now uses P7, not P2, which is La Placita at night.
+- **Hashtags:** 4, within the 3–8 range. Swapped `#puertoricofood` for `#sanjuanpuertorico` because none of the food is Puerto Rican.
+- **Privacy:** solid badge blur (name, event and any logo on the lanyard) still applies even though the conference can be mentioned. P10 and P7 stay gated on checkout, with no identifying hotel details in the frame or alt text. The P9 employer condition was removed now that the event is cleared. Location tag stays city-level. The Reel's "Conference by day" beat uses P7.
 - **Voice:** `profile.md` still has no voice info. No travel clichés found. The copy stays casual first person as a placeholder.
-- **Status:** needs creator input. It can't be scheduled until the restaurant names, checkout date and employer rules are confirmed.
+- **Status:** edited. Scheduling waits only on the checkout date. The La Placita line and the "between sessions" check are nice-to-haves with fallbacks written in.
