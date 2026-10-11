@@ -149,19 +149,24 @@ const STATE = {
   campaign: "Puerto Rico · Oct 2026",
   updated: "2026-10-11",
   pipeline: [
-    { name: "Research", s: "working", by: "Radar" },
-    { name: "Plan", s: "waiting", by: "Atlas" },
+    { name: "Research", s: "done", by: "Radar" },
+    { name: "Plan", s: "working", by: "Atlas" },
     { name: "Draft", s: "waiting", by: "Quill" },
     { name: "Edit", s: "waiting", by: "Margin" },
     { name: "Engage", s: "waiting", by: "Echo" },
     { name: "Analyze", s: "waiting", by: "Ledger" }
   ],
   agents: [
-    { id: "radar", name: "Radar", role: "Trend scout", c: "#7cc6c0", look: "radar", s: "working",
-      task: "Researching Puerto Rico Reel formats, seasonal hooks, similar creators and hashtags.",
-      out: null, file: "instagram/research/2026-10-11-puerto-rico.md" },
-    { id: "atlas", name: "Atlas", role: "Strategist", c: "#f2b880", look: "atlas", s: "waiting",
-      task: "Will turn Radar's research into a Puerto Rico posting plan.",
+    { id: "radar", name: "Radar", role: "Trend scout", c: "#7cc6c0", look: "radar", s: "done",
+      task: "Puerto Rico research brief is filed.",
+      out: `<b>Highlights</b><ul>
+        <li>Best formats for your footage: "things I wish I knew", cost-breakdown carousel, food list, POV day in Old San Juan.</li>
+        <li>Carousels earn far more saves than single photos.</li>
+        <li>Hooks: hurricane season ends Nov 30; bio bays glow brightest near the Nov 9 new moon; Discovery Day Nov 19 kicks off PR's long Christmas season.</li>
+        <li>Instagram now caps hashtags at 5, so captions and alt text carry search.</li>
+      </ul>`, file: "instagram/research/2026-10-11-puerto-rico.md" },
+    { id: "atlas", name: "Atlas", role: "Strategist", c: "#f2b880", look: "atlas", s: "working",
+      task: "Drafting your positioning, bio and an 8-post Puerto Rico plan.",
       out: null, file: "instagram/content-calendar.md" },
     { id: "quill", name: "Quill", role: "Content creator", c: "#c9a7eb", look: "quill", s: "waiting",
       task: "Will draft Reel scripts, carousels and captions for the plan.",
@@ -183,6 +188,8 @@ const STATE = {
     "Switch to a Professional (Creator) account if you haven't, so Ledger can read Insights."
   ],
   log: [
+    { t: "today", who: "atlas", msg: "Started the Puerto Rico plan and positioning." },
+    { t: "today", who: "radar", msg: "Filed the Puerto Rico research brief (formats, hooks, hashtags, travel facts)." },
     { t: "today", who: "radar", msg: "Started Puerto Rico trend research." },
     { t: "today", who: "atlas", msg: "Recorded @theleeroyjenkinss and the Puerto Rico trip in the profile." }
   ]
