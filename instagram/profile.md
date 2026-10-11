@@ -3,7 +3,7 @@
 Fill this in (or run `/ig-growth` and the team will interview you). The agents read this before every task.
 
 ## Basics
-- Handle:
+- Handle: @theleeroyjenkinss
 - Current followers:
 - Name to show on profile:
 - Home base (city/region — only as specific as you're comfortable sharing publicly):
