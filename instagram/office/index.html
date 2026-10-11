@@ -173,11 +173,11 @@ const STATE = {
         <li>New pillar: After Hours. El Yunque, bio bay and Piñones are parked until there's footage.</li></ul>`,
       file: "instagram/content-calendar.md" },
     { id: "quill", name: "Quill", role: "Content creator", c: "#c9a7eb", look: "quill", s: "done",
-      task: "Drafted a 10-slide carousel from your real photos, plus a 10-second Reel cut.",
-      out: `<b>Work trip to Puerto Rico: after-hours edition</b><ul>
-        <li>Cover: the red "Esto es La Calle" screen framed by palms.</li>
-        <li>Flow: badge-on selfie → convention views → room view → I ❤ PR → La Placita → ceviche → tacos + margarita → late-night arepa.</li>
-        <li>Fixes: blur the badge, crop two finger shots, rotate the arepa and tacos.</li></ul>`,
+      task: "Drafted two posts from your real photos: the after-hours carousel and the Old San Juan stay.",
+      out: `<b>Nov 2: Where I stayed on my Puerto Rico work trip</b><ul>
+        <li>Cover: the two arched windows under the wood beams.</li>
+        <li>Flow: bedroom → loft view down the spiral stairs → checkerboard stairwell → skylight → Old San Juan plaza → end card.</li>
+        <li>Film before checkout: a slow 8–10s pan of the arched windows, and walking down the spiral stairs.</li></ul>`,
       file: "instagram/drafts/" },
     { id: "margin", name: "Margin", role: "Editor", c: "#f39bb8", look: "margin", s: "done",
       task: "Edited the work-trip carousel. It's waiting on your answers in the Needs you box.",
@@ -203,7 +203,7 @@ const STATE = {
     { date: "Fri Oct 23", format: "Reel", hook: "Conference badge by day. La Placita by night.", goal: "Reach", status: "Idea" },
     { date: "Mon Oct 26", format: "Carousel", hook: "Conference in San Juan? 5 things I wish I knew", goal: "Saves + shares", status: "Idea" },
     { date: "Thu Oct 29", format: "Carousel", hook: "Everything I ate after work in San Juan (zero mofongo… yet)", goal: "Saves + comments", status: "Idea" },
-    { date: "Mon Nov 2", format: "Reel (POV)", hook: "POV: your first day in Old San Juan", goal: "Reach", status: "At risk: no footage" },
+    { date: "Mon Nov 2", format: "Carousel", hook: "Where I stayed on my Puerto Rico work trip", goal: "Saves + follows", status: "Drafted" },
     { date: "Wed Nov 4", format: "Carousel", hook: "Turn a San Juan work trip into a long weekend: the plan + cost", goal: "Saves + follows", status: "Idea" },
     { date: "Fri Nov 6", format: "Carousel", hook: "Is Puerto Rico worth it for a work trip? My honest take", goal: "Follows", status: "Idea" }
   ],
@@ -211,12 +211,15 @@ const STATE = {
     "Name the spots: ceviche, tacos + margarita, and the arepa place.",
     "Okay to say it was a work trip? Check if your employer or the event has rules on posting.",
     "Before you leave: one Puerto Rican dish (mofongo or alcapurrias), daytime Old San Juan or a beach, and a slow 10-second walk through La Placita.",
-    "Tell us your checkout date. Hotel-view and selfie slides go up after that.",
+    "Tell us your checkout date. Hotel-view, selfie and apartment slides go up after that.",
+    "One stay or two? (beachfront hotel vs the colonial apartment)",
+    "If you're still there: film a slow pan of the arched windows and a walk down the spiral stairs.",
     "How often do you travel for work? That decides whether the work-trip angle sticks.",
     "Approve or tweak the new bio on Atlas's desk.",
     "One line on what La Placita at night was really like, in your words."
   ],
   log: [
+    { t: "today", who: "quill", msg: "Drafted the Old San Juan stay carousel from 7 new photos." },
     { t: "today", who: "margin", msg: "Edited the work-trip carousel; new cover: \"Nights were mine.\"" },
     { t: "today", who: "margin", msg: "Started editing the work-trip carousel." },
     { t: "today", who: "quill", msg: "Drafted the after-hours carousel and Reel from 11 real photos and 1 clip." },
