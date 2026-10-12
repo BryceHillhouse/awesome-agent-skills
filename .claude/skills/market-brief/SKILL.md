@@ -35,6 +35,7 @@ The agents can't message or start each other. Only you (the main session) start 
 
      Mark each date CONFIRMED, NOT LISTED, or CONTRADICTED.
 
+   The LunarCrush quota is shared with the agents, and failed calls still use it up. So tell Scout, Oracle and Bear **not** to call LunarCrush; `verified.md` already has the prices. If you hit the per-minute limit, stop and wait for the reset rather than retrying.
    Tell Scout, Oracle and Bear to read `verified.md` first, treat it as verified, and not spend searches re-finding it.
 3. **Scout (`scout`).** Start it with the watchlist, today's date, the lookback, and `reports/<date>/news.md`. When it returns, check that `news.md` ends with `## Hand-off to Oracle`. If the section is missing, send the agent back to add it.
 4. **Oracle (`oracle`).** Start it with the watchlist, today's date, `reports/<date>/projections.md`, and the path to `news.md`. Check that the file has `## Answers to Scout` and `## Hand-off to Bear`.
@@ -53,7 +54,7 @@ The agents can't message or start each other. Only you (the main session) start 
      - `bear {ideas, line, candidates:[{asset, score, breakdown:{catalyst,timing,projections,positioning,data}, decision, reason}]}`.
 
      Each `line` is a two-sentence, in-character report from that agent. Every `text` stays under 45 characters.
-   - **Scorecard: new rows.** For every candidate Bear scored, `set` `scorecard/<date>-<ASSET>` with `{date, asset, score, decision, entry, checkDate: date + 14 days, exit: null, source}`. `entry` is the verified price from `verified.md`.
+   - **Scorecard: new rows.** Keep one open row per asset: skip any asset that already has a row with `exit: null`, so overlapping, near-identical samples don't inflate the hit rate. For every other candidate Bear scored, `set` `scorecard/<date>-<ASSET>` with `{date, asset, score, decision, entry, checkDate: date + 14 days, exit: null, source}`. `entry` is the verified price from `verified.md`.
    - **Scorecard: paper trades.** When Bear opens an idea, add `paper: {structure, strikes, expiry, cost, maxLoss, value, pnl}`. Price `value` with `put_math.py`: the `bs` estimate while open, intrinsic value at expiry. `pnl` = value − cost.
    - **Scorecard: grading.** `list` the scorecard and handle every row whose `exit` is null:
      - set `latest` from today's `verified.md` price for that asset;
