@@ -31,7 +31,7 @@ The agents can't message or start each other. Only you (the main session) start 
    - **USAFacts → FRED `getSeriesObservations`** (`sort_order: desc`, `limit: 3–5`) for `DGS10`, `DGS2`, `DFF` and `DCOILBRENTEU`. The VIX (`VIXCLS`) is license-restricted, so don't request it.
    - **USAFacts → web_gov `fetch`**:
      - `https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm` for FOMC dates.
-     - `https://www.bls.gov/schedule/news_release/cpi.htm` and `https://www.bls.gov/schedule/news_release/empsit.htm` for CPI and jobs dates.
+     - `https://www.bls.gov/cpi/` (its "Next Release" line) and `https://www.bls.gov/ces/` for the next CPI and jobs dates. The `bls.gov/schedule/...` pages can omit the next imminent release: on 2026-10-10 that made September CPI look "not listed" when it was due Oct 14. Use them only for later months.
 
      Mark each date CONFIRMED, NOT LISTED, or CONTRADICTED.
 
